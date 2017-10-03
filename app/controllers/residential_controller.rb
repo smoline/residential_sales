@@ -22,7 +22,10 @@ class ResidentialController < ApplicationController
   end
 
   def scatter_data
-    data = SalesFigure.select(:id, :zipcode, :jurisdiction, :median_value, :total_sales).order(:jurisdiction)
+    data = SalesFigure.select(:id, :zipcode, :jurisdiction, :median_value, :total_sales).where('median_value > 1000').order(:jurisdiction)
     render json: { scatter_data: data }
+  end
+
+  def boxplot
   end
 end
