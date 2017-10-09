@@ -122,7 +122,7 @@ function makeScatter() {
   // From http://bl.ocks.org/weiglemc/6185069
   var margin = {top: 20, right: 20, bottom: 100, left: 150},
       width  = 1200,
-      height = 900 - margin.top - margin.bottom;
+      height = 800 - margin.top - margin.bottom;
 
   /*
    * value accessor - returns the value to encode for a given data object.
@@ -271,8 +271,8 @@ function makeBoxplot() {
   // From: http://bl.ocks.org/mbostock/4061502
   // From: http://bl.ocks.org/jensgrubert/7789216
   var margin = {top: 30, right: 50, bottom: 95, left: 50},
-      width  = 900 - margin.left - margin.right;
-      height = 450 - margin.top - margin.bottom,
+      width  = 1200 - margin.left - margin.right;
+      height = 800 - margin.top - margin.bottom,
       min    = Infinity,
       max    = -Infinity,
       labels = false; // show the text labels beside individual boxplots?
