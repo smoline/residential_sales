@@ -132,13 +132,13 @@ function makeScatter() {
    */
 
   // setup x
-  var xValue = function(d) { return d.total_sales;},     // data -> value
+  var xValue = function(d) { return +d.total_sales;},     // data -> value
       xScale = d3.scale.linear().range([0, width]),      // value -> display
       xMap   = function(d) { return xScale(xValue(d));}, // data -> display
       xAxis  = d3.svg.axis().scale(xScale).orient("bottom");
 
   // setup y
-  var yValue = function(d) { return d.median_value;},    // data -> value
+  var yValue = function(d) { return +d.pmt;},    // data -> value
       yScale = d3.scale.linear().range([height, 0]),     // value -> display
       yMap   = function(d) { return yScale(yValue(d));}, // data -> display
       yAxis  = d3.svg.axis().scale(yScale).orient("left");
@@ -267,6 +267,8 @@ function iqr(k) {
     return [i, j];
   };
 }
+
+
 function makeBoxplot() {
   // From: http://bl.ocks.org/mbostock/4061502
   // From: http://bl.ocks.org/jensgrubert/7789216
