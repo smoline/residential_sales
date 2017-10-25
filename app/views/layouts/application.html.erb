@@ -12,6 +12,24 @@
   </head>
 
   <body data-mapbox-token="<%= ENV['MAPBOX_TOKEN'] %>">
-    <%= yield %>
+    <header>
+      <div class="navbar">
+        <div class="nav1">
+          <h1>Residential Sales</h1>
+        </div>
+        <div class="nav2">
+          <ul>
+            <li><a href="#"><%= link_to "Map", map_index_url %></a></li>
+            <li><a href="#"><%= link_to "Pie Chart", residential_index_url %></a></li>
+            <li><a href="#"><%= link_to "Bar Chart", residential_bar_chart_url %></a></li>
+            <li><a href="#"><%= link_to "Boxplot Chart", residential_boxplot_chart_url %></a></li>
+            <li><a href="#"><%= link_to "Scatter Plot Chart", residential_scatter_chart_url %></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
 </html>
